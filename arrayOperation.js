@@ -137,3 +137,41 @@ const newArr = [6, ...arr];
 console.log("🚀 ~ file: Untitled-1 ~ line 142 ~ newArr", newArr);
 
 // console.log(arr)
+
+const arr = [1,2,3,4,5,3];
+
+const [ ,,...rest ] = arr;
+console.log(rest)
+
+
+const index = arr.findIndex(function(item, index) {
+    return item === 3;
+});
+
+// add Item
+const updatedArray = [
+    ...arr.slice(0, index + 1),
+    6,
+    ...arr.slice(index + 1)
+];
+
+// replace Item
+const updatedArray1 = [
+    ...arr.slice(0, index),
+    6,
+    ...arr.slice(index + 1)
+];
+
+// remove Item
+const updatedArray2 = [
+    ...arr.slice(0, index),
+    ...arr.slice(index + 1)
+];
+
+
+
+
+
+
+
+
