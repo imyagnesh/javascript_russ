@@ -42,6 +42,71 @@ console.log(add(1, 2))
 // 2. resolve the issues of old javascript
 // 3. use for corporate projects
 
+// spread operator
+
+// function chaining
+
+// const calculator = (operator, ...rest) => {
+//   let result = 0;
+//   switch (operator) {
+//     case "add":
+//       for (let i = 0; i < rest.length; i++) {
+//         result += rest[i];
+//       }
+//       break;
+//     case "sub":
+//       for (let i = 0; i < rest.length; i++) {
+//         result -= rest[i];
+//       }
+//       break;
+//     case "mul":
+//       for (let i = 0; i < rest.length; i++) {
+//         result *= rest[i];
+//       }
+//       break;
+
+//     default:
+//       break;
+//   }
+
+//   return result;
+// };
+
+// fixe your code
+// create reuable code
+// code will never break.
+const calc = (...rest) => {
+    return (operation) => {
+      return operation(...rest);
+    };
+  };
+  
+  const add = (...rest) => {
+    let result = 0;
+    for (let i = 0; i < rest.length; i++) {
+      result += rest[i];
+    }
+    return result;
+  };
+  
+  const sub = (...rest) => {
+    let result = 0;
+    for (let i = 0; i < rest.length; i++) {
+      result -= rest[i];
+    }
+    return result;
+  };
+  
+  const mul = (...rest) => {
+      asdfaf
+    };
+  
+  console.log(add(1, 2, 3, 4, 5, 6));
+  
+  console.log(calc(1, 2, 3, 4)(sub));
+  // console.log(calculator("add", 1, 2, 3));
+  
+
 
 
 
