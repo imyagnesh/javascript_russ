@@ -171,6 +171,21 @@ const updatedArray2 = [
 
 
 
+const m = new Map();
+
+m.set('token', 'abcd');
+
+console.log(m.get('token'))
+
+for (const [key, value] of m) {
+    console.log(key)
+    console.log(value)
+}
+
+
+for (const iterator of s) {
+    console.log(iterator)
+}
 
 
 
