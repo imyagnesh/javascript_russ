@@ -1,3 +1,4 @@
-var b = 2;
-
-console.log(b);
+const label = document.getElementById('label');
+if(label) {
+    label.style = 'color:red';
+}
