@@ -6,7 +6,7 @@
   "repository": "https://github.com/imyagnesh/javascript_russ.git",
   "author": "Yagnesh Modh",
   "license": "MIT",
-  "scripts": {
+  "scripts": { 
     "build": "webpack",
     "start": "webpack serve",
     "lint": "eslint .",
