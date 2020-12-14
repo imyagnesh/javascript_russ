@@ -3,7 +3,7 @@ import * as test from './src/test';
 
 // import xyz, { text} from './src/test';
 
-const greet = 'Hello';
+const greet1 = 'Hello';
 
 console.log(test.greet);
 
