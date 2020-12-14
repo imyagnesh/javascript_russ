@@ -7,6 +7,7 @@
   "author": "Yagnesh Modh",
   "license": "MIT",
   "scripts": { 
+    "precommit": "lint-staged",
     "build": "webpack",
     "start": "webpack serve",
     "lint": "eslint .",
@@ -38,7 +39,8 @@
   "lint-staged": {
     "*.js": [
       "eslint --fix",
-      "prettier --write"
+      "prettier --write",
+      "git add"
     ]
   }
 }
