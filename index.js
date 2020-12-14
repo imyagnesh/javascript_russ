@@ -3,8 +3,6 @@ import * as test from './src/test';
 
 // import xyz, { text} from './src/test';
 
-const greet1 = 'Hello';
-
 console.log(test.greet);
 
 console.log(test.message);
