@@ -38,8 +38,7 @@
   "lint-staged": {
     "*.js": [
       "lint",
-      "prettier",
-      "git add"
+      "prettier"
     ]
   }
 }
