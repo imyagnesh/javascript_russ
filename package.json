@@ -6,7 +6,7 @@
   "repository": "https://github.com/imyagnesh/javascript_russ.git",
   "author": "Yagnesh Modh",
   "license": "MIT",
-  "scripts": { 
+  "scripts": {
     "precommit": "lint-staged",
     "build": "webpack",
     "start": "webpack serve",
@@ -42,5 +42,9 @@
       "prettier --write",
       "git add"
     ]
+  },
+  "dependencies": {
+    "css-loader": "^5.0.1",
+    "style-loader": "^2.0.0"
   }
 }
