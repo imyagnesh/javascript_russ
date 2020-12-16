@@ -24,6 +24,9 @@ const handlers = {
     await t.loadData();
     view.displayTodos();
   },
+  displayPandingTodos: () => {
+    view.pedningTodos();
+  },
 };
 
 export default handlers;

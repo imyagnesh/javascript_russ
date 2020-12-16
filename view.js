@@ -27,6 +27,23 @@ const view = {
     toggleButton.textContent = isDone ? 'Not Done' : 'Done';
     return toggleButton;
   },
+  pedningTodos() {
+    const todoUl = document.getElementById('todoList');
+    todoUl.innerHTML = '';
+    t.todos
+      .filter(x => !x.isDone)
+      .forEach(todo => {
+        const todoLi = document.createElement('li');
+        todoLi.id = todo.id;
+        todoLi.textContent = todo.todoText;
+        if (todo.isDone) {
+          todoLi.style = 'text-decoration: line-through';
+        }
+        todoLi.appendChild(this.createDeleteButton());
+        todoLi.appendChild(this.createToggleButton(todo.isDone));
+        todoUl.appendChild(todoLi);
+      });
+  },
 };
 
 export default view;

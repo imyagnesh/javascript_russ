@@ -20,6 +20,11 @@ function registerEventListners() {
   completeAllTodo.addEventListener('click', () => {
     handlers.completeAllTodo();
   });
+
+  const pendingTodos = document.getElementById('pending-todos');
+  pendingTodos.addEventListener('click', () => {
+    handlers.displayPandingTodos();
+  });
 }
 
 registerEventListners();
