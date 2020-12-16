@@ -11,8 +11,11 @@
         <h1 class="title">To-DO List</h1>
         <div class="add-todos">
             <input id="addTodoText" type="text" placeholder="Write your todo here" />
-            <button class="add-btn btn" onclick="handlers.addTodo()">
+            <button class="add-btn btn" id="add-todo">
                 <span>Add Todo</span>
+            </button>
+            <button class="add-btn btn" id="complete-all-todo">
+                <span>Complete All Todo</span>
             </button>
         </div>
         <div class="task-header">
@@ -23,86 +26,5 @@
             <!-- li element will be appended here -->
         </ul>
     </div>
-    <script>
-        const todoList = {
-  todos: [],
-  addTodo(todoText) {
-    this.todos.push({
-      todoText,
-      isDone: false,
-      id: new Date().valueOf(),
-    });
-  },
-  deleteTodo(id) {
-    const index = this.todos.findIndex(x => x.id == id);
-    this.todos = [...this.todos.slice(0, index), ...this.todos.slice(index + 1)];
-  },
-  toggleTodo(id) {
-    const index = this.todos.findIndex(x => x.id == id);
-    this.todos = [
-      ...this.todos.slice(0, index),
-      { ...this.todos[index], isDone: !this.todos[index].isDone },
-      ...this.todos.slice(index + 1),
-    ];
-  },
-};
-        const handlers = {
-        addTodo() {
-            const addTodoText = document.getElementById('addTodoText');
-            todoList.addTodo(addTodoText.value);
-            addTodoText.value = '';
-            view.displayTodos();
-        },
-        deleteTodo(id) {
-            todoList.deleteTodo(id);
-            view.displayTodos();
-        },
-        toggleTodo(id) {
-            todoList.toggleTodo(id);
-            view.displayTodos();
-        },
-        };
-        const view = {
-        displayTodos() {
-            const todoUl = document.getElementById('todoList');
-            todoUl.innerHTML = '';
-            todoList.todos.forEach(todo => {
-                const todoLi = document.createElement('li');
-                todoLi.id = todo.id;
-                todoLi.textContent = todo.todoText;
-                if(todo.isDone) {
-                    todoLi.style = "text-decoration: line-through"; 
-                }
-                todoLi.appendChild(this.createDeleteButton());
-                todoLi.appendChild(this.createToggleButton(todo.isDone));
-                todoUl.appendChild(todoLi);
-            });
-        },
-        createDeleteButton() {
-            const deleteButton = document.createElement('i');
-            deleteButton.className = 'deleteButton far fa-trash-alt';
-            return deleteButton;
-        },
-        createToggleButton(isDone) {
-            const toggleButton = document.createElement('button');
-            toggleButton.className = 'toggleButton btn';
-            toggleButton.textContent = isDone ? 'Not Done' : 'Done';
-            return toggleButton;
-        },
-        registerEventListners() {
-            const todoUl = document.getElementById('todoList');
-            todoUl.addEventListener('click', event => {
-            if (event.target.className === 'deleteButton far fa-trash-alt') {
-                handlers.deleteTodo(event.target.parentNode.id);
-            }
-            if (event.target.className === 'toggleButton btn') {
-                handlers.toggleTodo(event.target.parentNode.id);
-            }
-            });
-        },
-        };
-        view.registerEventListners();
-
-    </script>
 </body>
 </html>
