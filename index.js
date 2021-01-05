@@ -25,6 +25,16 @@ function registerEventListners() {
   pendingTodos.addEventListener('click', () => {
     handlers.displayPandingTodos();
   });
+
+  const completedTodo = document.getElementById('completed-todos');
+  completedTodo.addEventListener('click', () => {
+    handlers.diplayCompletdTodos();
+  });
+
+  const allTodo = document.getElementById('all-todos');
+  allTodo.addEventListener('click', () => {
+    handlers.displayAllTodos();
+  });
 }
 
 registerEventListners();

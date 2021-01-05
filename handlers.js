@@ -27,6 +27,12 @@ const handlers = {
   displayPandingTodos: () => {
     view.pedningTodos();
   },
+  diplayCompletdTodos: () => {
+    view.completedTodos();
+  },
+  displayAllTodos: () => {
+    view.displayTodos();
+  },
 };
 
 export default handlers;
