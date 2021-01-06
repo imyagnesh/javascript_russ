@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+      integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
+      crossorigin="anonymous"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Issue Tracker</h1>
+      <div class="jumbotron">
+        <h3>Add New Issue</h3>
+        <form id="issueInputForm">
+          <div class="form-group">
+            <label for="issueDescInput">Description</label>
+            <input
+              class="form-control"
+              type="text"
+              id="issueDescInput"
+              placeholder="Describe the issue..."
+            />
+          </div>
+          <div class="form-group">
+            <label for="issueSeverityInput">Severity</label>
+            <select id="issueSeverityInput" class="form-control">
+              <option value="Low">Low</option>
+              <option value="Medium">Medium</option>
+              <option value="High">High</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="issueAssignedToInput">Assigned To</label>
+            <input
+              class="form-control"
+              type="text"
+              id="issueAssignedToInput"
+              placeholder="Enter Responsible..."
+            />
+          </div>
+          <button type="submit" class="btn btn-primary">Add</button>
+        </form>
+      </div>
+      <div>
+          <div id="issueList">
+          </div>
+      </div>
+    </div>
+    <script src="./main.js"></script>
+  </body>
+</html>
