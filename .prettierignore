@@ -1,8 +1,0 @@
-dist
-public
-node_modules
-styles
-package.json
-.prettierrc.json
-.babelrc
-.vscode
